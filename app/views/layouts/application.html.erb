@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FlickrPhotoWidget</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+<% cache ("flickr_sidebar") do %>
+  <%= render_flickr_sidebar_widget(140131360@N07) %>
+<% end %>
+
+</body>
+</html>
