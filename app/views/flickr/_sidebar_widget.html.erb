@@ -1,11 +1,9 @@
 <div class="flickr">
   <ul>
-    <% photos.each do |row| -%>
+    <% photos.each do |p| %>
       <li>
-        <% row.each do |p| %>
-          <%= link_to(image_tag(p.url(:square), :class => 'flickr_photo', :title => p.title, :border => 0, :size => '79x75'), p.url_photopage) %>
-        <% end %>
+          <%= link_to image_tag(FlickRaw.url_b(p), class: 'flickr_photo', title: p.title, border: 0, size: '75x75'), FlickRaw.url_short(p) %>
       </li>
-    <% end -%>
+    <% end %>
   </ul>
 </div>
