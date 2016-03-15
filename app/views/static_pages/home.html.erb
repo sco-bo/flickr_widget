@@ -1,8 +1,20 @@
-
-<%= form_tag root_path, method: :get do  %>
-  <%= text_field_tag :flickr_id %>
-  <%= submit_tag "Sign in" %>
-<% end %>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="collapse navbar-collapse">
+    <div class="col-sm-4 col-md-4">
+      <form class="navbar-form" role="search">
+        <h4>Enter your Flickr ID <small><%= link_to "Find your ID", 'http://idgettr.com/', target: :_blank %></small></h4>
+          <div class="input-group">
+            <%= form_tag root_path, method: :get do  %>
+              <%= text_field_tag :flickr_id, nil, placeholder:'Ex: 30179751@N06', class:'form-control' %>
+            <div class="input-group-btn">
+              <%= submit_tag "Show Photos", name: nil, class:'btn btn-default' %>
+            </div>
+            <% end %>
+          </div>
+      </form>
+    </div>
+  </div>
+</nav>
 
 <% unless @flickr_id.nil? %>
   <% cache ("flickr_sidebar") do %>

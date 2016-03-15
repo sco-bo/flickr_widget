@@ -1,4 +1,3 @@
-
 module FlickrHelper
   def user_photos(user_id, photo_count)
     flickr.photos.search(user_id: user_id, per_page: photo_count)
