@@ -17,7 +17,5 @@
 </nav>
 
 <% unless @flickr_id.nil? %>
-  <% cache ("flickr_sidebar") do %>
     <%= render_flickr_sidebar_widget(@flickr_id) %>
-  <% end %>
 <% end %>
